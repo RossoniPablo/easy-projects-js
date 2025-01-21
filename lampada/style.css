@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  padding: 4px 0 4px 0;
+  width: 80px;
+  margin: 6px;
+}
