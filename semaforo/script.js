@@ -1,8 +1,10 @@
 const img = document.getElementById('img');
 const buttons = document.getElementById('buttons');
 let colorIndex = 0
+let intervalId = null
 
 const mudar = (event) => {
+  pararAutomatic()
   ligar[event.target.id]()
 }
 
@@ -17,11 +19,15 @@ const mudarCor = () => {
   nextIndex()
 }
 
+const pararAutomatic = () => {
+  clearInterval(intervalId)
+}
+
 const ligar = {
   'red': () => img.src = './img/vermelho.png',
   'yellow': () => img.src = './img/amarelo.png',
   'green': () => img.src = './img/verde.png',
-  'automatic': () => setInterval(mudarCor, 1000)
+  'automatic': () => intervalId = setInterval(mudarCor, 1000)
 }
 
 buttons.addEventListener('click', mudar)
